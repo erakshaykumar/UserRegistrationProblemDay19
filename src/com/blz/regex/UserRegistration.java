@@ -1,5 +1,5 @@
-/*@Purpose : As a User need to follow pre-defined
- *  Mobile Format - E.g. 91 9919819801 - Country code follow by space and 10 Digit Number
+/*@Purpose :As a User need to follow pre defined Password Rules
+ *Rule1 -  minimum 8 Characters - NOTE – All rules must be passed
  *@File : User Registration Using Regex
  *@Author : Akshay Kumar
  */
@@ -102,4 +102,24 @@ public class UserRegistration {
 		else
 			System.out.println("Phone Number is Invalid");
 	}
+
+	/*
+	 * @Purpose : Take Password Atleast 8 Character And Check It Is Getting Matched
+	 * With Regex/Regular Expression Or Not
+	 * 
+	 * @param : Name, Regex, Matches
+	 */
+	public static void validPassRule1() {
+		System.out.print("Enter The Password Atleast Eight Character : ");
+		String passWord = scanner.nextLine();
+		String regex4 = "^[A-Z a-z 0-9]{8,}$";
+		Pattern p4 = Pattern.compile(regex4);
+		Matcher m4 = p4.matcher(passWord);
+		boolean r4 = m4.matches();
+		if (r4)
+			System.out.println("Password is Valid");
+		else
+			System.out.println("Password is Invalid");
+	}
+
 }
