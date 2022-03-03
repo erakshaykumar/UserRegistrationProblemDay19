@@ -1,4 +1,4 @@
-/*@Purpose : As a User need to enter a valid First Name
+/*@Purpose : As a User need to enter a valid First And Last Name
  *  First name starts with Cap and has minimum 3 characters
  *@File : User Registration Using Regex
  *@Author : Akshay Kumar
@@ -36,4 +36,26 @@ public class UserRegistration {
 
 	}
 
+	/*
+	 * @Purpose : Take Last Name And Check It Is Getting Matched With Regex/Regular
+	 * Expression Or Not
+	 * 
+	 * @param : Name, Regex, Matches
+	 */
+	public static void validLastName() {
+
+		System.out.println("Enter Last Name:");
+		String lname = scanner.next();
+		String regex = "^[A-Z]{1}[a-z]{2,}$";
+
+		Pattern p = Pattern.compile(regex);
+		Matcher m = p.matcher(lname);
+		boolean r = m.matches();
+
+		if (r)
+			System.out.println("It Is A Last Name");
+		else
+			System.out.println("It Is Invalid Last name");
+
+	}
 }
