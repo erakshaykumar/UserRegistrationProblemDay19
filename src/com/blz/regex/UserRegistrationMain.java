@@ -1,7 +1,5 @@
-/*@Purpose : As a User need to enter a valid First,Last Name And Email
- *  First name starts with Cap and has minimum 3 characters And Email
- *  E.g. abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl
- *  & co) and 2 optional (xyz & in) with precise @ and . positions
+/*@Purpose : As a User need to follow pre-defined
+ *  Mobile Format - E.g. 91 9919819801 - Country code follow by space and 10 Digit Number
  *@File : User Registration Using Regex
  *@Author : Akshay Kumar
  */
@@ -23,6 +21,7 @@ public class UserRegistrationMain {
 			System.out.println("Enter 1 : To validate First Name ");
 			System.out.println("Enter 2 : To validate Last Name ");
 			System.out.println("Enter 3 : To validate E-mail ");
+			System.out.println("Enter 4 : To validate Moblie Number ");
 
 			switch (scanner.nextInt()) {
 			case 0:
@@ -38,6 +37,10 @@ public class UserRegistrationMain {
 
 			case 3:
 				UserRegistration.validEmail();
+				break;
+
+			case 4:
+				UserRegistration.validMobileNumber();
 				break;
 			}
 		}

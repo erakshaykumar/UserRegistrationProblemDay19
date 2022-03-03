@@ -1,7 +1,5 @@
-/*@Purpose : As a User need to enter a valid First,Last Name And Email
- *  First name starts with Cap and has minimum 3 characters And Email
- *  E.g. abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl
- *  & co) and 2 optional (xyz & in) with precise @ and . positions
+/*@Purpose : As a User need to follow pre-defined
+ *  Mobile Format - E.g. 91 9919819801 - Country code follow by space and 10 Digit Number
  *@File : User Registration Using Regex
  *@Author : Akshay Kumar
  */
@@ -74,8 +72,6 @@ public class UserRegistration {
 		String email = scanner.next();
 
 		String regex = "^[a-zA-Z0-9]+([.][A-Za-z]+)*@[a-zA-Z]+[.]+[a-zA-Z]{2,3}+([.][A-Za-z]+)*$";
-		;
-
 		Pattern p = Pattern.compile(regex);
 		Matcher m = p.matcher(email);
 		boolean r = m.matches();
@@ -85,5 +81,25 @@ public class UserRegistration {
 		else
 			System.out.println("Email Address is Invalid");
 
+	}
+
+	/*
+	 * @Purpose : Take Mobile Number And Check It Is Getting Matched With
+	 * Regex/Regular Expression Or Not
+	 * 
+	 * @param : Name, Regex, Matches
+	 */
+	public static void validMobileNumber() {
+
+		System.out.print("Enter your Mobile Number : ");
+		String phoneNo = scanner.nextLine();
+		String regex3 = "(91|0)?\\s?[6-9][0-9]{9}$";
+		Pattern p3 = Pattern.compile(regex3);
+		Matcher m3 = p3.matcher(phoneNo);
+		boolean r3 = m3.matches();
+		if (r3)
+			System.out.println("Phone Number is Valid");
+		else
+			System.out.println("Phone Number is Invalid");
 	}
 }
