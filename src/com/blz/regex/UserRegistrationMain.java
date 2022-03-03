@@ -1,5 +1,5 @@
 /*@Purpose :As a User need to follow pre defined Password Rules
- *Rule1 -  minimum 8 Characters - NOTE – All rules must be passed
+ *Rule2- Should Have Atleat 1 Upper Case - NOTE – All rules must be passed
  *@File : User Registration Using Regex
  *@Author : Akshay Kumar
  */
@@ -23,6 +23,7 @@ public class UserRegistrationMain {
 			System.out.println("Enter 3 : To validate E-mail ");
 			System.out.println("Enter 4 : To validate Moblie Number ");
 			System.out.println("Enter 5 : To validate Password Rule 1 ");
+			System.out.println("Enter 6 : To validate Password Rule 2 (Upper Case) ");
 
 			switch (scanner.nextInt()) {
 			case 0:
@@ -46,6 +47,10 @@ public class UserRegistrationMain {
 
 			case 5:
 				UserRegistration.validPassRule1();
+				break;
+
+			case 6:
+				UserRegistration.validPassRule2();
 				break;
 
 			default:

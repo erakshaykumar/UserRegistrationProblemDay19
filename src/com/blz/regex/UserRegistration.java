@@ -1,5 +1,5 @@
 /*@Purpose :As a User need to follow pre defined Password Rules
- *Rule1 -  minimum 8 Characters - NOTE – All rules must be passed
+ *Rule2- Should Have Atleat 1 Upper Case - NOTE – All rules must be passed
  *@File : User Registration Using Regex
  *@Author : Akshay Kumar
  */
@@ -122,4 +122,22 @@ public class UserRegistration {
 			System.out.println("Password is Invalid");
 	}
 
+	/*
+	 * @Purpose : Take Password Atleast One Upper Case Character & Eight Caracter
+	 * And Also Check It Is Getting Matched With Regex/Regular Expression Or Not
+	 * 
+	 * @param : Name, Regex, Matches
+	 */
+	public static void validPassRule2() {
+		System.out.print("Enter the Password Atleast One Upper Case & Eight Character :");
+		String passWord1 = scanner.nextLine();
+		String regex5 = "^[A-Z]{1}+[a-zA-z0-9]{7,}$";
+		Pattern p5 = Pattern.compile(regex5);
+		Matcher m5 = p5.matcher(passWord1);
+		boolean r5 = m5.matches();
+		if (r5)
+			System.out.println("Password is Valid");
+		else
+			System.out.println("Password is Invalid");
+	}
 }
