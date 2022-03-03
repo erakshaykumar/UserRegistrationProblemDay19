@@ -1,5 +1,5 @@
 /*@Purpose :As a User need to follow pre defined Password Rules
- *Rule4 – Has exactly Special Character - NOTE – All rules must be passed
+ *Should clear all Email samples provided separately
  *@File : User Registration Using Regex
  *@Author : Akshay Kumar
  */
@@ -179,5 +179,25 @@ public class UserRegistration {
 			System.out.println("Password is Valid");
 		else
 			System.out.println("Password is Invalid");
+	}
+
+	/*
+	 * @Purpose : Take Password Atleast One Upper Case Character,Numeric,Special
+	 * Character & Gmail Address & Eight Character And Also Check It Is Getting
+	 * Matched With Regex/Regular Expression Or Not
+	 * 
+	 * @param : Name, Regex, Matches
+	 */
+	public static void emailSamples() {
+		System.out.print("Enter the email : @gmail.com ");
+		String emailSample = scanner.next();
+		String regex6 = "[a-zA-Z0-9_.]*[-]*[+]*[a-zA-Z0-9]*@[a-zA-Z0-9]+([.][a-zA-Z]+)+";
+		Pattern p6 = Pattern.compile(regex6);
+		Matcher m6 = p6.matcher(emailSample);
+		boolean r6 = m6.matches();
+		if (r6)
+			System.out.println("Valid G-mail Address");
+		else
+			System.out.println("Invalid G-mail Address");
 	}
 }
