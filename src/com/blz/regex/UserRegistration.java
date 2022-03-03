@@ -1,5 +1,5 @@
 /*@Purpose :As a User need to follow pre defined Password Rules
- *Rule3- Should Have Atleat 1 Numeric Number In Password - NOTE – All rules must be passed
+ *Rule4 – Has exactly Special Character - NOTE – All rules must be passed
  *@File : User Registration Using Regex
  *@Author : Akshay Kumar
  */
@@ -142,8 +142,9 @@ public class UserRegistration {
 	}
 
 	/*
-	 * @Purpose : Take Password Atleast One Upper Case Character & Eight Caracter
-	 * And Also Check It Is Getting Matched With Regex/Regular Expression Or Not
+	 * @Purpose : Take Password Atleast One Upper Case Character,Numeric & Eight
+	 * Character And Also Check It Is Getting Matched With Regex/Regular Expression
+	 * Or Not
 	 * 
 	 * @param : Name, Regex, Matches
 	 */
@@ -151,6 +152,26 @@ public class UserRegistration {
 		System.out.println("Enter the Password Atleast One Upper Case & One Numaric");
 		String passWord2 = scanner.nextLine();
 		String regex6 = "^[A-Z]{1}+[a-zA-Z]{6}+[0-9]+{1,}$";
+		Pattern p6 = Pattern.compile(regex6);
+		Matcher m6 = p6.matcher(passWord2);
+		boolean r6 = m6.matches();
+		if (r6)
+			System.out.println("Password is Valid");
+		else
+			System.out.println("Password is Invalid");
+	}
+
+	/*
+	 * @Purpose : Take Password Atleast One Upper Case Character,Numeric,Special
+	 * Character & Eight Character And Also Check It Is Getting Matched With
+	 * Regex/Regular Expression Or Not
+	 * 
+	 * @param : Name, Regex, Matches
+	 */
+	public static void validPassRule4() {
+		System.out.print("Enter the Password Atleast One Upper Case & One Numaric & One Special Character:  ");
+		String passWord2 = scanner.next();
+		String regex6 = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*#?&])[A-Za-z0-9@$!%*?&]{5,}$";
 		Pattern p6 = Pattern.compile(regex6);
 		Matcher m6 = p6.matcher(passWord2);
 		boolean r6 = m6.matches();
