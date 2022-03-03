@@ -6,10 +6,25 @@
 
 package com.blz.regex;
 
-public class UserRegistrationMain {
+import java.util.Scanner;
 
-	public static void main(String[] args) {
+public class UserRegistrationMain {
+	static Scanner scanner = new Scanner(System.in);
+
+	public static void welcome() {
 		System.out.println("Welcome to User Registation Program");
 	}
 
+	/*
+	 * @Purpose : Taking Proper Values From User
+	 */
+	public static void main(String[] args) {
+		welcome();
+		System.out.println("Enter 1 : to validate First Name ");
+		switch (scanner.nextInt()) {
+		case 1:
+			UserRegistration.validFirstName();
+			break;
+		}
+	}
 }
